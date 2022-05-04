@@ -14,7 +14,7 @@ loop do
   
   puts "ホイ"
 
-  computer_hand = rand(4)
+  computer_hand = rand(3)
   gestures = ["グー", "チョキ", "パー", "戦わない"]
   
   puts "---------------"
@@ -30,7 +30,7 @@ loop do
       return "あいこ"
     elsif (player_hand == 0 && computer_hand == 1) || (player_hand == 1 && computer_hand == 2) || (player_hand == 2 && computer_hand == 0)
       return "勝ち"
-    elsif player_hand == 3 || computer_hand == 3
+    elsif player_hand == 3
       return "じゃんけん不成立"
     else
       return "負け"
@@ -63,7 +63,7 @@ loop do
     when "勝ち"
       if player_direction == computer_direction
         puts "あなたの勝ちです"
-        i = 0
+        break
       else
         puts "もう１度"
         i = 0
@@ -71,7 +71,7 @@ loop do
     when "負け"
       if player_direction == computer_direction
         puts "あなたの負けです"
-        i = 0
+        break
       else
         puts "もう１度"
         i = 0
